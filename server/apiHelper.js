@@ -5,7 +5,6 @@ const request = require('request');
 const appId = 'd6c2df4e'
 const appKey = '06a6e4be0f23cd75db3af16ae7d7b696' 
 //***************************************************
-
 const apiSearch = (arrayOfIngredients, callback) => {
 	//array of ingredients turned into a string seperated by a comma 
 	const search = arrayOfIngredients.join(',');

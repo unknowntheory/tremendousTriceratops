@@ -2,9 +2,6 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var request = require('request');
 var apiHelper = require('./apiHelper.js');
-// UNCOMMENT THE DATABASE YOU'D LIKE TO USE
-// var items = require('../database-mysql');
-// var items = require('../database-mongo');
 
 //*********************************************************************************************************
 //DATABASE HELPER FUNCTIONS NEEDED: 
@@ -15,9 +12,11 @@ var apiHelper = require('./apiHelper.js');
 //*********************************************************************************************************
  app = express();
 
-
+//*********************************************************************************************************
+//---MIDDLEWARE---
 app.use(express.static(__dirname + '/../react-client/dist'));
 app.use(bodyParser.json())
+//*********************************************************************************************************
 
 app.post('/search/filter', (req, res) => {
 	//search the api with an array of ingredients
