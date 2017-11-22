@@ -2,7 +2,7 @@ import React from 'react';
 
 
 const Ingredients = (props) =>(
-  <div>
+  <div className=".col-md-4 ing-div">
 
     <ul className="ing-title"> Ingredients
       {props.listData.map((ingredient,i)=>{

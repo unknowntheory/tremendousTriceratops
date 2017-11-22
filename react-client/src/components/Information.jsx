@@ -30,7 +30,7 @@ class Information extends React.Component {
     {console.log(this.props.listInfo)}
     console.log(this.state.healthLabels);
     return(
-      <div>
+      <div className="col-md-4 list-group inf-div">
         {this.state.calories ?
         <div>
           <ul>Health Labels
