@@ -4,9 +4,9 @@ var request = require('request');
 var apiHelper = require('./apiHelper.js');
 
 //*********************************************************************************************************
-//DATABASE HELPER FUNCTIONS NEEDED: 
-// searchTerm(string, callback) - Gets all recipies from db that include string in its name then uses cb to return them.  
-// addToDb(obj, callback) - Adds obj to db then invokes cb. 
+//DATABASE HELPER FUNCTIONS NEEDED:
+// searchTerm(string, callback) - Gets all recipies from db that include string in its name then uses cb to return them.
+// addToDb(obj, callback) - Adds obj to db then invokes cb.
 // getAll(callback) - Gets all recipes from database and uses cb to return them
 // getUserFavorites(userId, callback) - Users userId to find users saved recipes then returns them using cb.
 //*********************************************************************************************************
@@ -31,13 +31,13 @@ app.post('/search/filter', (req, res) => {
 })
 
 app.post('/search', (req, res) => {
-// 	/search - Query DB for recipes by search term	
+// 	/search - Query DB for recipes by search term
   db.searchTerm(req.body.search, (data) => {
   	res.status(201);
   	res.send(data);
   })
 })
-	
+
 app.get('/grid', (req,res) => {
 // 	/grid - Query DB for all recipes (12?)
 	db.getAll(data => {
@@ -48,8 +48,8 @@ app.get('/grid', (req,res) => {
 
 app.get('/favorites', (req,res) => {
 // 	/favorites - Query DB for user’s favorites
-	//either use url to find specific user, or send user info in header, or convert to 
-	//post and send user name in body 
+	//either use url to find specific user, or send user info in header, or convert to
+	//post and send user name in body
 	db.getUserFavorites(userId, (data)=> {
 		res.status(200);
 		res.send(data)
@@ -59,14 +59,3 @@ app.get('/favorites', (req,res) => {
 app.listen(3000, function() {
   console.log('listening on port 3000!');
 });
-
-	
-	
-
-
-
-	
-
-
-
-
