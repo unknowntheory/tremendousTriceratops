@@ -47,7 +47,7 @@ class App extends React.Component {
 
 
     return (
-      <div>
+      <div className='container-fluid'>
 
       <RecipeTile data={sample_data} recipeHandle={this.recipeHandle}/>
       {/* <Ingredients listData={this.state.listDataFromRecipe}  /> */}
